@@ -9,10 +9,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme.NoActionBar">
-        <activity android:name=".ProfileActivity">
-
-        </activity>
-        <activity android:name=".HomeActivity">
+        <activity android:name=".StartActivity"></activity>
+        <activity android:name=".ProfileActivity"></activity>
+        <activity
+            android:name=".HomeActivity"
+            android:windowSoftInputMode="adjustNothing">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -25,9 +26,7 @@
         <activity android:name=".GroupActivity" />
         <activity android:name=".GymActivity" />
         <activity android:name=".TipActivity" />
-        <activity android:name=".StaticActivity">
-
-        </activity>
+        <activity android:name=".StaticActivity"></activity>
     </application>
 
 </manifest>

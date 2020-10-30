@@ -102,7 +102,7 @@ public class StaticActivity extends AppCompatActivity {
         // create a data object with the data sets
         BarData data= new BarData(dataSets);
         // black lines and points
-        set1.setColors(Color.parseColor("#FF9370DB"));
+        set1.setColors(Color.parseColor("#4D61CF"));
 
         // set data
         chart.setData(data);

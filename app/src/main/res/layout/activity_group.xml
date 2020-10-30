@@ -5,7 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#ECEAEA"
+    android:background="@color/colorTest2"
     tools:context=".GroupActivity">
 
     <TextView
@@ -14,6 +14,7 @@
         android:layout_height="56dp"
         android:layout_marginTop="47dp"
         android:fontFamily="@font/sstb"
+        android:textColor="@color/colorTest1"
         android:text="그룹"
         android:textSize="55dp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -30,6 +31,7 @@ q
         android:fontFamily="@font/ssbl"
         android:text="내 그룹"
         android:textSize="20dp"
+        android:textColor="@color/colorTest1"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.107"
         app:layout_constraintStart_toStartOf="parent"
@@ -93,6 +95,7 @@ q
         android:fontFamily="@font/ssbl"
         android:text="그룹 랭킹"
         android:textSize="20dp"
+        android:textColor="@color/colorTest1"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.107"
         app:layout_constraintStart_toStartOf="parent"

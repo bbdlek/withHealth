@@ -31,6 +31,7 @@ public class ProfileActivity extends AppCompatActivity {
     ImageButton homeButton;
     ImageButton groupButton;
     ImageButton profileButton;
+    double height=0,weight=0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -136,6 +137,7 @@ public class ProfileActivity extends AppCompatActivity {
                     public void onClick(DialogInterface dialogInterface, int i) {
                         Edtheight = (EditText) dialogView.findViewById(R.id.Edtheight);
                         btnheight.setText(Edtheight.getText().toString() + "cm");
+                        height=Double.parseDouble(Edtheight.getText().toString());
                     }
                 });
                 dlg.setNegativeButton("취소", null);
@@ -154,7 +156,8 @@ public class ProfileActivity extends AppCompatActivity {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
                         Edtweight = (EditText) dialogView.findViewById(R.id.Edtweight);
-                        btnweight.setText(Edtheight.getText().toString() + "kg");
+                        btnweight.setText(Edtweight.getText().toString() + "kg");
+                        weight=Double.parseDouble(Edtweight.getText().toString());
                     }
                 });
                 dlg.setNegativeButton("취소", null);
@@ -162,7 +165,7 @@ public class ProfileActivity extends AppCompatActivity {
             }
         });
         bmi = (TextView) findViewById(R.id.bmi);
-        double Bmi = 23;
+        double Bmi = weight/height;
         if (Bmi <= 15.0) {
             bmi.setText("당신은 심각한 저체중으로 사망위험도는 2.76입니다.");
         }

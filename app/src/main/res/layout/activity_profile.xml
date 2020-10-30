@@ -6,7 +6,7 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/colorGray">
+    android:background="@color/colorTest2">
 
     <TextView
         android:id="@+id/textView3"
@@ -84,7 +84,7 @@
         android:layout_height="38dp"
         android:layout_marginStart="16dp"
         android:layout_marginLeft="16dp"
-        android:background="@drawable/buttonshape"
+        android:background="@drawable/buttonshape_sec"
         android:shadowColor="#000000"
         android:text="성별"
         android:textAlignment="center"
@@ -104,7 +104,7 @@
         android:layout_height="38dp"
         android:layout_marginStart="16dp"
         android:layout_marginLeft="16dp"
-        android:background="@drawable/buttonshape"
+        android:background="@drawable/buttonshape_sec"
         android:shadowRadius="5"
         android:text="생년월일"
         android:textAlignment="center"
@@ -125,7 +125,7 @@
         android:layout_height="38dp"
         android:layout_marginStart="16dp"
         android:layout_marginLeft="16dp"
-        android:background="@drawable/buttonshape"
+        android:background="@drawable/buttonshape_sec"
         android:shadowRadius="5"
         android:text="키"
         android:textAlignment="center"
@@ -145,7 +145,7 @@
         android:layout_height="38dp"
         android:layout_marginStart="16dp"
         android:layout_marginLeft="16dp"
-        android:background="@drawable/buttonshape"
+        android:background="@drawable/buttonshape_sec"
         android:shadowRadius="5"
         android:text="몸무게"
         android:textAlignment="center"
