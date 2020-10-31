@@ -10,4 +10,6 @@
     <color name="colorClear">#00ff0000</color>
     <color name="colorFont">#4D61CF</color>
     <color name="color_font">#6B6767</color>
+    <color name="colorTest1">#4D61CF</color>
+    <color name="colorTest2">#EFF3FF</color>
 </resources>
