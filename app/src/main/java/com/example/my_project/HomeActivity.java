@@ -36,6 +36,7 @@ public class HomeActivity extends AppCompatActivity {
     ImageButton homeButton;
     ImageButton groupButton;
     ImageButton profileButton;
+    Button buttonstart;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -83,19 +84,18 @@ public class HomeActivity extends AppCompatActivity {
             }
         });
 
-
-        btnStart = (Button) findViewById(R.id.buttonstart);
-        btnEnd=(Button)findViewById(R.id.buttonend);
-        Chorono = (Chronometer) findViewById(R.id.chronometer1);
+        btnStart = findViewById(R.id.buttonstart);
         btnStart.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view) {
-                Chorono.setBase(SystemClock.elapsedRealtime());
-                Chorono.start();
-                Chorono.setTextColor(Color.WHITE);
-                Toast.makeText(getApplicationContext(),"시작",Toast.LENGTH_SHORT).show();
+            public void onClick(View v) {
+                //Timer_pop으로 전환
+                Intent i = new Intent( HomeActivity.this, Timer_pop.class);
+                startActivity(i);//지정해 놓은 페이지로 화면 전환
             }
         });
+
+
+        btnEnd=(Button)findViewById(R.id.buttonend);
         btnEnd.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

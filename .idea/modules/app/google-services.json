@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "189295132597",
+    "firebase_url": "https://withhealth-ada67.firebaseio.com",
+    "project_id": "withhealth-ada67",
+    "storage_bucket": "withhealth-ada67.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:189295132597:android:4f7bcdd93a83235df5e3fc",
+        "android_client_info": {
+          "package_name": "com.example.my_project"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "189295132597-sji2icdgkignsg1psshpot8miffu2qhq.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.my_project",
+            "certificate_hash": "62e806a849ad5e0d09c20fb4d88d40c51740254e"
+          }
+        },
+        {
+          "client_id": "189295132597-kr4kl7jm56p1bvf90ho3li8sko79ng2p.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCH_ubm3u45RHO88atDknvFjQIM3HKmW1E"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "189295132597-kr4kl7jm56p1bvf90ho3li8sko79ng2p.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
