@@ -1,0 +1,251 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ECEAEA"
+    tools:context=".Timer_pop">
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="150dp"
+        android:layout_height="35dp"
+        android:layout_marginTop="32dp"
+
+        android:fontFamily="@font/sstb"
+        android:gravity="center_horizontal"
+        android:text="총 운동시간"
+        android:textColor="#FF00008B"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/timer_text"
+        android:layout_width="226dp"
+        android:layout_height="61dp"
+        android:layout_marginTop="20dp"
+        android:fontFamily="@font/sstb"
+        android:gravity="center_horizontal"
+        android:text="00:00:00:00"
+        android:textColor="#FFA07A"
+        android:textSize="40sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="131dp"
+        android:layout_height="24dp"
+        android:layout_marginTop="13dp"
+        android:fontFamily="@font/sstb"
+        android:gravity="center_horizontal"
+        android:text="숄더프레스"
+        android:textColor="#FF6495ED"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toStartOf="@+id/textView3"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/timer_text" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="131dp"
+        android:layout_height="24dp"
+        android:layout_marginTop="13dp"
+        android:fontFamily="@font/sstb"
+        android:gravity="center_horizontal"
+        android:text="3set"
+        android:textColor="#FF6495ED"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toStartOf="@+id/textView2"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/textView4"
+        app:layout_constraintTop_toBottomOf="@+id/timer_text" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="131dp"
+        android:layout_height="24dp"
+        android:layout_marginTop="13dp"
+        android:fontFamily="@font/sstb"
+        android:gravity="center_horizontal"
+        android:text="진행중....."
+        android:textColor="#FF6495ED"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/textView3"
+        app:layout_constraintTop_toBottomOf="@+id/timer_text" />
+
+
+    <ImageButton
+        android:id="@+id/sound_on"
+        android:layout_width="51dp"
+        android:layout_height="42dp"
+        android:background="#00FFFFFF"
+        android:tint="#00F10069"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.933"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView"
+        app:srcCompat="@android:drawable/ic_lock_silent_mode_off"
+        tools:visibility="invisible" />
+
+    <ImageButton
+        android:id="@+id/sound_off"
+        android:layout_width="53dp"
+        android:layout_height="44dp"
+        android:background="#00FFFFFF"
+        android:tint="#00F10069"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.938"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView"
+        app:srcCompat="@android:drawable/ic_lock_silent_mode" />
+
+    <Button
+        android:id="@+id/b_play"
+        android:layout_width="74dp"
+        android:layout_height="39dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="68dp"
+        android:background="#00FFFFFF"
+        android:text="시작"
+        android:textSize="10sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/b_pause"
+        android:layout_width="74dp"
+        android:layout_height="39dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="68dp"
+        android:background="#00FFFFFF"
+        android:text="일시정지"
+        android:textSize="10sp"
+        android:visibility="invisible"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/b_reset"
+        android:layout_width="74dp"
+        android:layout_height="39dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="100dp"
+        android:background="#00FFFFFF"
+        android:text="리셋"
+        android:textSize="10sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/time_snd"
+        android:layout_width="114dp"
+        android:layout_height="42dp"
+        android:layout_marginBottom="8dp"
+        android:fontFamily="@font/ssbl"
+        android:gravity="center_horizontal"
+        android:text="2등 시간"
+        android:textColor="#DDc23cd4"
+        app:layout_constraintBottom_toTopOf="@+id/dansang"
+        app:layout_constraintEnd_toStartOf="@+id/name_trd"
+        app:layout_constraintHorizontal_bias="0.47"
+        app:layout_constraintStart_toEndOf="@+id/name_fst" />
+
+    <TextView
+        android:id="@+id/time_fst"
+        android:layout_width="114dp"
+        android:layout_height="42dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginLeft="32dp"
+        android:layout_marginBottom="8dp"
+        android:fontFamily="@font/ssbl"
+        android:gravity="right"
+        android:text="1등 시간"
+        android:textColor="#DDc23cd4"
+        app:layout_constraintBottom_toTopOf="@+id/dansang"
+        app:layout_constraintEnd_toStartOf="@+id/name_snd"
+        app:layout_constraintHorizontal_bias="0.485"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/time_trd"
+        android:layout_width="114dp"
+        android:layout_height="42dp"
+        android:layout_marginBottom="8dp"
+        android:fontFamily="@font/ssbl"
+        android:gravity="left"
+        android:text="3등 시간"
+        android:textColor="#DDc23cd4"
+        app:layout_constraintBottom_toTopOf="@+id/dansang"
+        app:layout_constraintStart_toEndOf="@+id/name_snd" />
+
+    <ImageView
+        android:id="@+id/dansang"
+        android:layout_width="462dp"
+        android:layout_height="177dp"
+        android:layout_marginBottom="24dp"
+        android:background="#00FFFFFF"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.555"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/dansang" />
+
+    <TextView
+        android:id="@+id/name_snd"
+        android:layout_width="114dp"
+        android:layout_height="42dp"
+        android:layout_marginBottom="8dp"
+        android:fontFamily="@font/ssbl"
+        android:gravity="center_horizontal"
+        android:text="2등 이름"
+        android:textColor="#DDc23cd4"
+        app:layout_constraintBottom_toTopOf="@+id/time_snd"
+        app:layout_constraintEnd_toStartOf="@+id/name_trd"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/name_fst" />
+
+    <TextView
+        android:id="@+id/name_fst"
+        android:layout_width="114dp"
+        android:layout_height="42dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginLeft="32dp"
+        android:layout_marginBottom="8dp"
+        android:fontFamily="@font/ssbl"
+        android:gravity="right"
+        android:text="1등 이름"
+        android:textColor="#DDc23cd4"
+        app:layout_constraintBottom_toTopOf="@+id/time_fst"
+        app:layout_constraintEnd_toStartOf="@+id/name_snd"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/name_trd"
+        android:layout_width="114dp"
+        android:layout_height="42dp"
+        android:layout_marginBottom="8dp"
+        android:fontFamily="@font/ssbl"
+        android:gravity="left"
+        android:text="3등 이름"
+        android:textColor="#DDc23cd4"
+        app:layout_constraintBottom_toTopOf="@+id/time_trd"
+        app:layout_constraintStart_toEndOf="@+id/name_snd" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
