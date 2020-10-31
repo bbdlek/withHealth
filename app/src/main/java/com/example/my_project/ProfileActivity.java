@@ -16,6 +16,8 @@ import android.widget.Toast;
 import android.widget.Button;
 import android.widget.DatePicker;
 
+import com.google.firebase.firestore.FirebaseFirestore;
+
 public class ProfileActivity extends AppCompatActivity {
     TextView nickname, btnheight,btnweight,bmi;
     ImageButton editnick;
@@ -35,6 +37,9 @@ public class ProfileActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_profile);
+
+        // Access a Cloud Firestore instance from your Activity
+        FirebaseFirestore db = FirebaseFirestore.getInstance();
 
         //홈버튼에서 각 버튼으로
         tipButton = findViewById(R.id.tipButton);

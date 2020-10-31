@@ -1,6 +1,7 @@
 package com.example.my_project;
 
 import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Build;
 import android.os.Handler;
@@ -84,6 +85,12 @@ public class Timer_pop extends AppCompatActivity {
         });
 
 
+    }
+
+    @Override
+    public void onBackPressed() {
+        Intent i = new Intent( Timer_pop.this, HomeActivity.class);
+        startActivity(i);//지정해 놓은 페이지로 화면 전환
     }
 
     @SuppressLint("HandlerLeak")
