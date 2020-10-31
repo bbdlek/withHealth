@@ -6,146 +6,71 @@
     android:id="@+id/linearLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/colorGray"
+    android:background="@color/colorTest2"
     android:baselineAligned="false"
     android:orientation="vertical" >
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        app:layout_constraintTop_toBottomOf="parent"
-        tools:layout_editor_absoluteX="51dp">
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="parent">
 
         //추천루틴 미구현
-        <ImageButton
-            android:id="@+id/imageButton4"
-            android:layout_width="35dp"
-            android:layout_height="30dp"
-            android:layout_marginStart="164dp"
-            android:layout_marginLeft="164dp"
-            android:layout_marginTop="50dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.565"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.0"
-            tools:srcCompat="@tools:sample/avatars" />
 
 
         //타이머인데 기준이형이랑 상호작용 해야함.
+
+
+        //타이머 시작 버튼
+
+        //타이머 종료 버튼
+
+        //오늘 날짜 출력
+
+        //표 부분 수정할부분임.
+
+        //home버튼
+
         <Chronometer
             android:id="@+id/chronometer1"
             android:layout_width="match_parent"
             android:layout_height="60dp"
+            android:layout_marginTop="124dp"
             android:format="%s"
             android:gravity="center"
+            android:textColor="@color/colorTest1"
             android:textSize="30dp"
-            android:textColor="@color/colorMain"
-            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.189" />
-        //타이머 시작 버튼
+            app:layout_constraintTop_toTopOf="parent" />
+
         <Button
             android:id="@+id/buttonstart"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="시작"
-            android:background="#FF9370DB"
-            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_width="80dp"
+            android:layout_height="43dp"
+            android:layout_marginTop="200dp"
+            android:background="@drawable/buttonshape_sec"
+            android:text="START"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.356"
+            app:layout_constraintHorizontal_bias="0.498"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.273" />
-        //타이머 종료 버튼
-        <Button
-            android:id="@+id/buttonend"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="종료"
-            android:background="#FF9370DB"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.665"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.273" />
-        //오늘 날짜 출력
+            app:layout_constraintTop_toTopOf="parent" />
+
         <TextView
             android:id="@+id/dateNow"
             android:layout_width="140dp"
             android:layout_height="35dp"
+            android:layout_marginTop="80dp"
+            android:textColor="@color/colorTest1"
             android:textSize="24dp"
-            android:textColor="@color/colorMain"
-            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.375"
+            app:layout_constraintHorizontal_bias="0.42"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.126" />
-        //표 부분 수정할부분임.
-        <TableLayout
-            android:id="@+id/tableLayout"
-            android:layout_width="359dp"
-            android:layout_height="348dp"
-            android:background="#FFFFFF"
-            android:stretchColumns="*"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.704">
+            app:layout_constraintTop_toTopOf="parent" />
 
-            <TableRow>
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:background="@drawable/table_inside"
-                    android:text="루틴" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:background="@drawable/table_inside"
-                    android:text="세트 수" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:background="@drawable/table_inside"
-                    android:text="이전 무게" />
-
-
-            </TableRow>
-
-            <TableRow android:layout_height="196dp">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:background="@drawable/table_inside"
-                    android:text="바벨로우" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:background="@drawable/table_inside"
-                    android:text="5 set" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:background="@drawable/table_inside"
-                    android:text="40kg" />
-            </TableRow>
-        </TableLayout>
-
-        //home버튼
         <ImageButton
             android:id="@+id/staticButton"
             android:layout_width="wrap_content"
@@ -215,6 +140,68 @@
             app:layout_constraintTop_toBottomOf="@+id/recyclerView"
             app:layout_constraintVertical_bias="0.271"
             app:srcCompat="@drawable/tip_icon" />
+
+        <EditText
+            android:id="@+id/newitem"
+            android:layout_width="191dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="264dp"
+            android:layout_weight="1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.081"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+            android:id="@+id/btnAdd"
+            android:layout_width="87dp"
+            android:layout_height="44dp"
+            android:layout_marginTop="264dp"
+            android:background="@drawable/buttonshape_sec"
+            android:onClick="mOnClick"
+            android:text="add"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.663"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+            android:id="@+id/btnDelete"
+            android:layout_width="87dp"
+            android:layout_height="44dp"
+            android:layout_marginTop="264dp"
+            android:background="@drawable/buttonshape_sec"
+            android:onClick="mOnClick"
+            android:text="delete"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.944"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ListView
+            android:id="@+id/listView"
+            android:layout_width="382dp"
+            android:layout_height="272dp"
+            android:layout_marginTop="332dp"
+            android:layout_weight="1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.379"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+        </ListView>
+
+        <ImageButton
+            android:id="@+id/imageButton5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="48dp"
+            android:background="@color/colorClear"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.852"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@android:drawable/btn_star" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

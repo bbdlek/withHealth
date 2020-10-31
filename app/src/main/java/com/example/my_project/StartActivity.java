@@ -14,7 +14,7 @@ import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.TextView;
 
-public class Timer_pop extends AppCompatActivity {
+public class StartActivity extends AppCompatActivity {
 
     private Button mStartBtn, mStopBtn, mPauseBtn;
     private TextView mTimeTextView;
@@ -25,7 +25,7 @@ public class Timer_pop extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.timer_pop_activity);
+        setContentView(R.layout.activity_start);
 
         if (Build.VERSION.SDK_INT >= 21) {
             getWindow().setStatusBarColor(Color.parseColor("#4ea1d3"));
@@ -86,13 +86,11 @@ public class Timer_pop extends AppCompatActivity {
 
 
     }
-
     @Override
     public void onBackPressed() {
-        Intent i = new Intent( Timer_pop.this, HomeActivity.class);
+        Intent i = new Intent( StartActivity.this, HomeActivity.class);
         startActivity(i);//지정해 놓은 페이지로 화면 전환
     }
-
     @SuppressLint("HandlerLeak")
     Handler handler = new Handler() {
         @Override

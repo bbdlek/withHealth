@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".StaticActivity"
-    android:background="@color/colorGray">
+    android:background="@color/colorTest2">
 
     <ScrollView
         android:layout_width="match_parent"
@@ -129,7 +129,7 @@
                             android:id="@android:id/tabcontent"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:background="@color/colorMain">
+                            android:background="@color/colorTest1">
                             <!-- 첫 번째 페이지. content1 -->
                             <RelativeLayout
                                 android:id="@+id/content1"

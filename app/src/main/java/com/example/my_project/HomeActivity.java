@@ -1,18 +1,21 @@
 package com.example.my_project;
 
 import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.os.SystemClock;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.Chronometer;
+import android.widget.EditText;
 import android.widget.ImageButton;
+import android.widget.ListView;
 import android.widget.Toast;
 import android.widget.TextView;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
 
@@ -29,6 +32,9 @@ public class HomeActivity extends AppCompatActivity {
     String formatDate = sdfNow.format(date);
     TextView dateNow;
     Calendar calendar = Calendar.getInstance();
+    ArrayList<String> items;
+    ArrayAdapter<String> adapter;
+    ListView listView;
 
     //homebutton
     ImageButton tipButton;
@@ -84,28 +90,56 @@ public class HomeActivity extends AppCompatActivity {
             }
         });
 
-        btnStart = findViewById(R.id.buttonstart);
+
+        btnStart = (Button) findViewById(R.id.buttonstart);
+
+        Chorono = (Chronometer) findViewById(R.id.chronometer1);
         btnStart.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {
-                //Timer_pop으로 전환
-                Intent i = new Intent( HomeActivity.this, Timer_pop.class);
-                startActivity(i);//지정해 놓은 페이지로 화면 전환
-            }
-        });
-
-
-        btnEnd=(Button)findViewById(R.id.buttonend);
-        btnEnd.setOnClickListener(new View.OnClickListener() {
-            @Override
             public void onClick(View view) {
-                Chorono.stop();
-                Chorono.setTextColor(Color.WHITE);
-                Toast.makeText(getApplicationContext(),"종료",Toast.LENGTH_SHORT).show();
+
+                Intent i = new Intent( HomeActivity.this, StartActivity.class);
+                startActivity(i);//지정해 놓은 페이지로 화면 전환
+
             }
         });
+
         dateNow = (TextView) findViewById(R.id.dateNow);
         dateNow.setText(formatDate);    // TextView 에 현재 시간 문자열 할당
 
+        //리스트뷰
+        items=new ArrayList<String>();
+        items.add("바벨로우");
+        items.add("벤치 프레스");
+        items.add("숄더 프레스");
+        items.add("스쿼트");
+        adapter=new ArrayAdapter<String>(HomeActivity.this, android.R.layout.simple_list_item_single_choice, items);
+        listView=(ListView)findViewById(R.id.listView);
+        listView.setAdapter(adapter);
+        listView.setChoiceMode(ListView.CHOICE_MODE_SINGLE);
     }
+    public void mOnClick(View v) {
+        EditText ed = (EditText) findViewById(R.id.newitem);
+        switch (v.getId()) {
+            case R.id.btnAdd:                                 // ADD 버튼 클릭시
+                String text = ed.getText().toString();        // EditText에 입력된 문자열값을 얻기
+                if (!text.isEmpty()) {                        // 입력된 text 문자열이 비어있지 않으면
+                    items.add(text);                          // items 리스트에 입력된 문자열 추가
+                    ed.setText("");                           // EditText 입력란 초기화
+                    adapter.notifyDataSetChanged();           // 리스트 목록 갱신
+                }
+                break;
+            case R.id.btnDelete:                             // DELETE 버튼 클릭시
+                int pos = listView.getCheckedItemPosition(); // 현재 선택된 항목의 첨자(위치값) 얻기
+                if (pos != ListView.INVALID_POSITION) {      // 선택된 항목이 있으면
+                    items.remove(pos);                       // items 리스트에서 해당 위치의 요소 제거
+                    listView.clearChoices();                 // 선택 해제
+                    adapter.notifyDataSetChanged();
+                    // 어답터와 연결된 원본데이터의 값이 변경된을 알려 리스트뷰 목록 갱신
+                }
+                break;
+        }
+    }
+
+
 }
