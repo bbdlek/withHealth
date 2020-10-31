@@ -12,3 +12,5 @@
 /captures
 .externalNativeBuild
 .cxx
+
+kakao-android-legacy-sdk-1.30.2/gradle/wrapper/gradle-wrapper.properties
