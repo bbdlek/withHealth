@@ -15,7 +15,7 @@ public class TipActivity extends AppCompatActivity {
     ImageButton homeButton;
     ImageButton groupButton;
     ImageButton profileButton;
-    TextView gym;
+    TextView gym,running,yoga,bike;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -69,6 +69,33 @@ public class TipActivity extends AppCompatActivity {
             public void onClick(View v) {
                 //gymActivity로 전환
                 Intent i = new Intent( TipActivity.this, GymActivity.class);
+                startActivity(i);//지정해 놓은 페이지로 화면 전환
+            }
+        });
+        running = findViewById(R.id.running);
+        running.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //gymActivity로 전환
+                Intent i = new Intent( TipActivity.this, RunActivity.class);
+                startActivity(i);//지정해 놓은 페이지로 화면 전환
+            }
+        });
+        yoga = findViewById(R.id.yoga);
+        yoga.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //gymActivity로 전환
+                Intent i = new Intent( TipActivity.this, YogaActivity.class);
+                startActivity(i);//지정해 놓은 페이지로 화면 전환
+            }
+        });
+        bike = findViewById(R.id.bike);
+        bike.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //gymActivity로 전환
+                Intent i = new Intent( TipActivity.this, BikeActivity.class);
                 startActivity(i);//지정해 놓은 페이지로 화면 전환
             }
         });

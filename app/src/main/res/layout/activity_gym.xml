@@ -5,13 +5,23 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/colorTest2"
     tools:context=".GymActivity">
 
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="previous"
-        android:id="@+id/pre_btn"/>
+    <TextView
+        android:id="@+id/textView9"
+        android:layout_width="102dp"
+        android:layout_height="60dp"
+        android:fontFamily="@font/sstb"
+        android:text="Gym"
+        android:textColor="@color/colorTest1"
+        android:textSize="55dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.051"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.023" />
 
     <ImageButton
         android:id="@+id/chest"
@@ -73,8 +83,8 @@
         android:id="@+id/legs"
         android:layout_width="164dp"
         android:layout_height="145dp"
-        android:layout_marginTop="500dp"
         android:layout_marginLeft="210dp"
+        android:layout_marginTop="500dp"
         app:srcCompat="@drawable/legs" />
 
 </RelativeLayout>
