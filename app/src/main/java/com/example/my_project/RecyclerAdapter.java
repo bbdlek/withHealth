@@ -2,7 +2,13 @@ package com.example.my_project;
 
 //import android.support.annotation.NonNull;
 //import android.support.v7.widget.RecyclerView;
+import androidx.annotation.NonNull;
+import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+
+import android.content.Intent;
+import android.text.BoringLayout;
+import android.util.TypedValue;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -26,9 +32,20 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ItemVi
     }
 
     @Override
-    public void onBindViewHolder(ItemViewHolder holder, int position) {
+    public void onBindViewHolder(final ItemViewHolder holder, final int position) {
         // Item을 하나, 하나 보여주는(bind 되는) 함수입니다.
+
         holder.onBind(listData.get(position));
+        holder.imageView.setOnClickListener(new View.OnClickListener(){
+//        GridLayoutManager.LayoutParams layoutParams = (GridLayoutManager.LayoutParams)holder.imageView.getLayoutParams();
+            @Override
+            public void onClick(View v) {
+//                layoutParams.width = 125;
+                Intent intent = new Intent(v.getContext(), group_info.class);
+                intent.putExtra("number", position);
+                v.getContext().startActivity(intent);
+            }
+        });
     }
 
     @Override

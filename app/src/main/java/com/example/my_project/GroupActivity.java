@@ -18,12 +18,16 @@ import java.util.List;
 public class GroupActivity extends AppCompatActivity {
 
     Button btn_g_p1;
+    Button MakingGroupButton;
+    Button mygroup1, mygroup2, mygroup3, mygroup4;
 
     ImageButton tipButton;
     ImageButton staticButton;
     ImageButton homeButton;
     ImageButton groupButton;
     ImageButton profileButton;
+
+
     private RecyclerAdapter adapter;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -71,23 +75,73 @@ public class GroupActivity extends AppCompatActivity {
             }
         });
 
+        MakingGroupButton = findViewById(R.id.MakingGroup);
+        MakingGroupButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //MakeGroupActivity로 전환
+                Intent i = new Intent( GroupActivity.this, MakeGroupActivity.class);
+                startActivity(i);//지정해 놓은 페이지로 화면 전환
+            }
+        });
+
+        mygroup1 = findViewById(R.id.group_icon1);
+        mygroup1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //MakeGroupActivity로 전환
+                Intent i = new Intent( GroupActivity.this, find_group_popup1.class);
+                startActivity(i);//지정해 놓은 페이지로 화면 전환
+            }
+        });
+
+        mygroup2 = findViewById(R.id.group_icon2);
+        mygroup2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //MakeGroupActivity로 전환
+                Intent i = new Intent( GroupActivity.this, find_group_popup1.class);
+                startActivity(i);//지정해 놓은 페이지로 화면 전환
+            }
+        });
+
+        mygroup3 = findViewById(R.id.group_icon3);
+        mygroup3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //MakeGroupActivity로 전환
+                Intent i = new Intent( GroupActivity.this, find_group_popup1.class);
+                startActivity(i);//지정해 놓은 페이지로 화면 전환
+            }
+        });
+
+        mygroup4 = findViewById(R.id.group_icon4);
+        mygroup4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //MakeGroupActivity로 전환
+                Intent i = new Intent( GroupActivity.this, find_group_popup1.class);
+                startActivity(i);//지정해 놓은 페이지로 화면 전환
+            }
+        });
+
         init();
 
         getData();
 
-        Button.OnClickListener btnListener = new View.OnClickListener(){
-            public void onClick(View v){
-                switch (v.getId()){
-                    case R.id.group_icon3:
-                        Intent intent = new Intent(GroupActivity.this, find_group_popup1.class);
-                        startActivityForResult(intent, 1);
-
-                        break;
-                }
-            }
-        };
-        btn_g_p1 = (Button)findViewById(R.id.group_icon3);
-        btn_g_p1.setOnClickListener(btnListener);
+//        Button.OnClickListener btnListener = new View.OnClickListener(){
+//            public void onClick(View v){
+//                switch (v.getId()){
+//                    case R.id.group_icon3:
+//                        Intent intent = new Intent(GroupActivity.this, find_group_popup1.class);
+//                        startActivityForResult(intent, 1);
+//
+//                        break;
+//                }
+//            }
+//        };
+//        btn_g_p1 = (Button)findViewById(R.id.group_icon3);
+//        btn_g_p1.setOnClickListener(btnListener);
     }
 
 
