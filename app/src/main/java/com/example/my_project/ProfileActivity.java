@@ -19,11 +19,11 @@ import android.widget.DatePicker;
 import com.google.firebase.firestore.FirebaseFirestore;
 
 public class ProfileActivity extends AppCompatActivity {
-    TextView nickname, btnheight, btnweight, bmi;
+    TextView nickname, btnheight, btnweight, textbmi;
     ImageButton editnick;
     EditText Edtname, Edtheight, Edtweight;
     View dialogView;
-    Button btnsex, btnbirth;
+    Button btnsex, btnbirth,bmi;
     DatePickerDialog.OnDateSetListener callbackMethod;
 
 
@@ -34,6 +34,7 @@ public class ProfileActivity extends AppCompatActivity {
     ImageButton groupButton;
     ImageButton profileButton;
     double height=0,weight=0;
+    double Bmi;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -160,29 +161,36 @@ public class ProfileActivity extends AppCompatActivity {
                         Edtweight = (EditText) dialogView.findViewById(R.id.Edtweight);
                         btnweight.setText(Edtweight.getText().toString() + "kg");
                         weight=Double.parseDouble(Edtweight.getText().toString());
+
                     }
                 });
                 dlg.setNegativeButton("취소", null);
                 dlg.show();
             }
         });
-        bmi = (TextView) findViewById(R.id.bmi);
-        double Bmi = weight/height;
-        if (Bmi <= 15.0) {
-            bmi.setText("당신은 심각한 저체중으로 사망위험도는 2.76입니다.");
-        }
-        if (Bmi > 15.0 && Bmi <= 20.0) {
-            bmi.setText("당신은 저체중과 정상의 중간경계로 사망위험도는 1.35입니다.");
-        }
-        if (Bmi > 20.0 && Bmi <= 22.6) {
-            bmi.setText("당신은 정상체중이며 사망위험도는 1.09입니다.");
-        }
-        if (Bmi > 22.6 && Bmi <= 30.0) {
-            bmi.setText("단신은 정상과 과체중의 중간경계로 사망위험도는 1.03입니다.");
-        }
-        if (Bmi > 30.0) {
-            bmi.setText("단신은 고도비만으로 사망위험도는 1.5입니다.");
-        }
+        bmi = (Button) findViewById(R.id.bmi);
+        textbmi=(TextView)findViewById(R.id.textbmi);
+        bmi.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Bmi=weight/(height/100)/(height/100);
+                if (Bmi <= 15.0) {
+                    textbmi.setText("당신은 심각한 저체중으로 사망위험도는 2.76입니다.");
+                }
+                if (Bmi > 15.0 && Bmi <= 20.0) {
+                    textbmi.setText("당신은 저체중과 정상의 중간경계로 사망위험도는 1.35입니다.");
+                }
+                if (Bmi > 20.0 && Bmi <= 22.6) {
+                    textbmi.setText("당신은 정상체중이며 사망위험도는 1.09입니다.");
+                }
+                if (Bmi > 22.6 && Bmi <= 30.0) {
+                    textbmi.setText("단신은 정상과 과체중의 중간경계로 사망위험도는 1.03입니다.");
+                }
+                if (Bmi > 30.0) {
+                    textbmi.setText("단신은 고도비만으로 사망위험도는 1.5입니다.");
+                }
+            }
+        });
     }
     public void InitializeView(){
         btnbirth=(Button)findViewById(R.id.btnbirth);

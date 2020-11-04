@@ -3,25 +3,28 @@ package com.example.my_project;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.media.Image;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 
 public class GymActivity extends AppCompatActivity {
 
-    Button pre_btn;
+    ImageButton chest;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_gym);
 
-        pre_btn = findViewById(R.id.pre_btn);
-        pre_btn.setOnClickListener(new View.OnClickListener() {
+        chest=(ImageButton)findViewById(R.id.chest);
+        chest.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {
-                Intent i = new Intent(GymActivity.this, TipActivity.class);
-                finish();
+            public void onClick(View view) {
+                Intent i = new Intent(GymActivity.this, ChestActivity.class);
+                startActivity(i);
             }
         });
+
     }
 }

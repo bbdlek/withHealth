@@ -16,7 +16,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme.NoActionBar">
-        <activity android:name=".MakeGroupActivity" />
+        <activity android:name=".ChestActivity"></activity>
+        <activity android:name=".BikeActivity" />
+        <activity android:name=".YogaActivity" />
+        <activity android:name=".RunActivity" />
         <activity android:name=".StartActivity" />
         <activity android:name=".ProfileActivity" />
         <activity
