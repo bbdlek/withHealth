@@ -55,9 +55,12 @@ dependencies {
     implementation 'com.google.firebase:firebase-database:19.5.1'
     implementation 'com.google.firebase:firebase-firestore:22.0.0'
     implementation 'com.google.firebase:firebase-storage'
+    implementation 'com.google.firebase:firebase-auth'
+    implementation 'com.google.android.gms:play-services-auth:18.1.0'
     // Add the dependencies for any other desired Firebase products
     // https://firebase.google.com/docs/android/setup#available-libraries
 
     //ted permission
     implementation "gun0912.ted:tedpermission:2.1.0"
 }
+apply plugin: "com.google.gms.google-services"

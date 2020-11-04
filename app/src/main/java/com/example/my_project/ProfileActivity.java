@@ -1,5 +1,6 @@
 package com.example.my_project;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -16,6 +17,11 @@ import android.widget.Toast;
 import android.widget.Button;
 import android.widget.DatePicker;
 
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 import com.google.firebase.firestore.FirebaseFirestore;
 
 public class ProfileActivity extends AppCompatActivity {
@@ -25,6 +31,10 @@ public class ProfileActivity extends AppCompatActivity {
     View dialogView;
     Button btnsex, btnbirth,bmi;
     DatePickerDialog.OnDateSetListener callbackMethod;
+
+    //firebase
+    private FirebaseDatabase database = FirebaseDatabase.getInstance();
+    private DatabaseReference userref = database.getReference().child("User");
 
 
     //homebutton
@@ -53,6 +63,7 @@ public class ProfileActivity extends AppCompatActivity {
                 //tipActivity로 전환
                 Intent i = new Intent(ProfileActivity.this, TipActivity.class);
                 startActivity(i);//지정해 놓은 페이지로 화면 전환
+//                finish();
             }
         });
 
@@ -63,6 +74,7 @@ public class ProfileActivity extends AppCompatActivity {
                 //staticActivity로 전환
                 Intent i = new Intent(ProfileActivity.this, StaticActivity.class);
                 startActivity(i);//지정해 놓은 페이지로 화면 전환
+//                finish();
             }
         });
 
@@ -73,6 +85,7 @@ public class ProfileActivity extends AppCompatActivity {
                 //homeActivity로 전환
                 Intent i = new Intent(ProfileActivity.this, HomeActivity.class);
                 startActivity(i);//지정해 놓은 페이지로 화면 전환
+//                finish();
             }
         });
 
@@ -83,6 +96,7 @@ public class ProfileActivity extends AppCompatActivity {
                 //groupActivity로 전환
                 Intent i = new Intent(ProfileActivity.this, GroupActivity.class);
                 startActivity(i);//지정해 놓은 페이지로 화면 전환
+//                finish();
             }
         });
 
@@ -100,6 +114,24 @@ public class ProfileActivity extends AppCompatActivity {
                     public void onClick(DialogInterface dialogInterface, int i) {
                         Edtname = (EditText) dialogView.findViewById(R.id.Edtnick);
                         nickname.setText(Edtname.getText().toString());
+                        userref.addListenerForSingleValueEvent(new ValueEventListener() {
+                            @Override
+                            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                                int i;
+                                for(i = 1; i < 100; i++){
+                                    Toast.makeText(getApplicationContext(), ((SignupActivity) SignupActivity.context_id).myID, Toast.LENGTH_LONG);
+                                    if(userref.child("User" + i).child("id").equals(((SignupActivity) SignupActivity.context_id).myID)){
+                                        break;
+                                    }
+                                }
+                                userref.child("User" + i).child("nickName").setValue(Edtname.getText().toString());
+                            }
+
+                            @Override
+                            public void onCancelled(@NonNull DatabaseError error) {
+
+                            }
+                        });
                     }
                 });
                 dlg.setNegativeButton("취소", null);

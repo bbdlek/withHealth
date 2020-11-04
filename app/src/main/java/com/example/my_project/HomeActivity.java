@@ -89,6 +89,7 @@ public class HomeActivity extends AppCompatActivity {
                 //groupActivity로 전환
                 Intent i = new Intent( HomeActivity.this, GroupActivity.class);
                 startActivity(i);//지정해 놓은 페이지로 화면 전환
+//                finish();
             }
         });
 
@@ -99,6 +100,7 @@ public class HomeActivity extends AppCompatActivity {
                 //profileActivity로 전환
                 Intent i = new Intent( HomeActivity.this, ProfileActivity.class);
                 startActivity(i);//지정해 놓은 페이지로 화면 전환
+//                finish();
             }
         });
 

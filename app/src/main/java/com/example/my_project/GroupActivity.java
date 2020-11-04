@@ -18,6 +18,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 //import android.support.v7.widget.LinearLayoutManager;
 
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -46,12 +47,19 @@ public class GroupActivity extends AppCompatActivity {
     private ArrayList<GroupAll> arrayList;
     private FirebaseDatabase database;
     private DatabaseReference databaseReference;
-    private CustomAdapter cuadapter;
+    private CustomAdapter_main cuadapter;
+
+    private FirebaseAuth mAuth;
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_group);
+
+        //Initialize firebase auth
+        mAuth = FirebaseAuth.getInstance();
 
         //홈버튼에서 각 버튼으로
         tipButton = findViewById(R.id.tipButton);
@@ -61,6 +69,7 @@ public class GroupActivity extends AppCompatActivity {
                 //tipActivity로 전환
                 Intent i = new Intent( GroupActivity.this, TipActivity.class);
                 startActivity(i);//지정해 놓은 페이지로 화면 전환
+//                finish();
             }
         });
 
@@ -71,6 +80,7 @@ public class GroupActivity extends AppCompatActivity {
                 //staticActivity로 전환
                 Intent i = new Intent( GroupActivity.this, StaticActivity.class);
                 startActivity(i);//지정해 놓은 페이지로 화면 전환
+//                finish();
             }
         });
 
@@ -81,6 +91,7 @@ public class GroupActivity extends AppCompatActivity {
                 //homeActivity로 전환
                 Intent i = new Intent( GroupActivity.this, HomeActivity.class);
                 startActivity(i);//지정해 놓은 페이지로 화면 전환
+//                finish();
             }
         });
 
@@ -91,6 +102,7 @@ public class GroupActivity extends AppCompatActivity {
                 //profileActivity로 전환
                 Intent i = new Intent( GroupActivity.this, ProfileActivity.class);
                 startActivity(i);//지정해 놓은 페이지로 화면 전환
+//                finish();
             }
         });
 
@@ -101,6 +113,7 @@ public class GroupActivity extends AppCompatActivity {
                 //MakeGroupActivity로 전환
                 Intent i = new Intent( GroupActivity.this, MakeGroupActivity.class);
                 startActivity(i);//지정해 놓은 페이지로 화면 전환
+//                finish();
             }
         });
 
@@ -190,7 +203,7 @@ public class GroupActivity extends AppCompatActivity {
 
         });
 
-        adapter = new CustomAdapter(arrayList, this);
+        adapter = new CustomAdapter_main(arrayList, this);
         recyclerView.setAdapter(adapter); // 리사이클러뷰에 어뎁터 연결
 
     }

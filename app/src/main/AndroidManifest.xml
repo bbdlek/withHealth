@@ -2,11 +2,9 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.my_project">
     <!-- 인터넷 사용 권한 -->
-    <uses-permission android:name="android.permission.INTERNET" />
-
-    <!-- camera, gallery -->
+    <uses-permission android:name="android.permission.INTERNET" /> <!-- camera, gallery -->
     <uses-permission android:name="android.permission.CAMERA" />
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 
     <application
@@ -16,7 +14,18 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme.NoActionBar">
-        <activity android:name=".ChestActivity"></activity>
+        <activity android:name=".GoogleLogin" />
+        <activity android:name=".SignupActivity" />
+        <activity android:name=".Login" />
+        <activity android:name=".Loading_Login">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".MakeGroupActivity" />
+        <activity android:name=".ChestActivity" />
         <activity android:name=".BikeActivity" />
         <activity android:name=".YogaActivity" />
         <activity android:name=".RunActivity" />
@@ -24,13 +33,7 @@
         <activity android:name=".ProfileActivity" />
         <activity
             android:name=".HomeActivity"
-            android:windowSoftInputMode="adjustNothing">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
+            android:windowSoftInputMode="adjustNothing" />
         <activity android:name=".group_info" />
         <activity
             android:name=".group_find_popup2"
