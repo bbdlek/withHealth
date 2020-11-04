@@ -17,6 +17,8 @@ import android.widget.Toast;
 import android.widget.Button;
 import android.widget.DatePicker;
 
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -117,14 +119,11 @@ public class ProfileActivity extends AppCompatActivity {
                         userref.addListenerForSingleValueEvent(new ValueEventListener() {
                             @Override
                             public void onDataChange(@NonNull DataSnapshot snapshot) {
-                                int i;
-                                for(i = 1; i < 100; i++){
-                                    Toast.makeText(getApplicationContext(), ((SignupActivity) SignupActivity.context_id).myID, Toast.LENGTH_LONG);
-                                    if(userref.child("User" + i).child("id").equals(((SignupActivity) SignupActivity.context_id).myID)){
-                                        break;
-                                    }
+                                FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+                                String uid = user.getUid();
+                                if(snapshot.child(uid).exists()){
+                                    userref.child(uid).child("nickName").setValue(Edtname.getText().toString());
                                 }
-                                userref.child("User" + i).child("nickName").setValue(Edtname.getText().toString());
                             }
 
                             @Override
@@ -155,6 +154,21 @@ public class ProfileActivity extends AppCompatActivity {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
                         btnsex.setText("남자");
+                        userref.addListenerForSingleValueEvent(new ValueEventListener() {
+                            @Override
+                            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                                FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+                                String uid = user.getUid();
+                                if(snapshot.child(uid).exists()){
+                                    userref.child(uid).child("gender").setValue(btnsex.getText().toString());
+                                }
+                            }
+
+                            @Override
+                            public void onCancelled(@NonNull DatabaseError error) {
+
+                            }
+                        });
                     }
                 }).create().show();
             }
@@ -173,6 +187,21 @@ public class ProfileActivity extends AppCompatActivity {
                         Edtheight = (EditText) dialogView.findViewById(R.id.Edtheight);
                         btnheight.setText(Edtheight.getText().toString() + "cm");
                         height=Double.parseDouble(Edtheight.getText().toString());
+                        userref.addListenerForSingleValueEvent(new ValueEventListener() {
+                            @Override
+                            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                                FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+                                String uid = user.getUid();
+                                if(snapshot.child(uid).exists()){
+                                    userref.child(uid).child("height").setValue(Edtheight.getText().toString());
+                                }
+                            }
+
+                            @Override
+                            public void onCancelled(@NonNull DatabaseError error) {
+
+                            }
+                        });
                     }
                 });
                 dlg.setNegativeButton("취소", null);
@@ -193,6 +222,21 @@ public class ProfileActivity extends AppCompatActivity {
                         Edtweight = (EditText) dialogView.findViewById(R.id.Edtweight);
                         btnweight.setText(Edtweight.getText().toString() + "kg");
                         weight=Double.parseDouble(Edtweight.getText().toString());
+                        userref.addListenerForSingleValueEvent(new ValueEventListener() {
+                            @Override
+                            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                                FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+                                String uid = user.getUid();
+                                if(snapshot.child(uid).exists()){
+                                    userref.child(uid).child("weight").setValue(Edtweight.getText().toString());
+                                }
+                            }
+
+                            @Override
+                            public void onCancelled(@NonNull DatabaseError error) {
+
+                            }
+                        });
 
                     }
                 });
@@ -232,6 +276,21 @@ public class ProfileActivity extends AppCompatActivity {
             @Override
             public void onDateSet(DatePicker view, int year, int monthOfYear, int dayofMonth) {
                 btnbirth.setText(year + "/" + monthOfYear + "/" + dayofMonth);
+                userref.addListenerForSingleValueEvent(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(@NonNull DataSnapshot snapshot) {
+                        FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+                        String uid = user.getUid();
+                        if(snapshot.child(uid).exists()){
+                            userref.child(uid).child("birth").setValue(btnbirth.getText().toString());
+                        }
+                    }
+
+                    @Override
+                    public void onCancelled(@NonNull DatabaseError error) {
+
+                    }
+                });
             }
         };
     }
