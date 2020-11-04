@@ -11,7 +11,7 @@ import android.widget.ImageButton;
 
 public class GymActivity extends AppCompatActivity {
 
-    ImageButton chest;
+    ImageButton chest,back;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -25,6 +25,13 @@ public class GymActivity extends AppCompatActivity {
                 startActivity(i);
             }
         });
-
+        back=(ImageButton)findViewById(R.id.back);
+        back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(GymActivity.this, BackActivity.class);
+                startActivity(i);
+            }
+        });
     }
 }

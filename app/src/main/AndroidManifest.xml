@@ -9,7 +9,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme.NoActionBar">
-        <activity android:name=".ChestActivity"></activity>
+        <activity android:name=".PullupActivity"></activity>
+        <activity android:name=".BackActivity" />
+        <activity android:name=".MainActivity" />
+        <activity android:name=".ChestActivity" />
         <activity android:name=".BikeActivity" />
         <activity android:name=".YogaActivity" />
         <activity android:name=".RunActivity" />
