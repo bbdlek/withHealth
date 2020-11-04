@@ -101,9 +101,32 @@ public class ProfileActivity extends AppCompatActivity {
 //                finish();
             }
         });
-
         nickname = (TextView) findViewById(R.id.nickname);
         editnick = (ImageButton) findViewById(R.id.editnick);
+        btnsex = (Button) findViewById(R.id.btnsex);
+        btnheight = (TextView) findViewById(R.id.btnheight);
+        btnweight = (TextView) findViewById(R.id.btnweight);
+        btnbirth=(Button)findViewById(R.id.btnbirth);
+        userref.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                FirebaseUser check = FirebaseAuth.getInstance().getCurrentUser();
+                String uidck = check.getUid();
+                if(snapshot.child(uidck).exists()){
+                    nickname.setText(snapshot.child(uidck).child("nickName").getValue(String.class));
+                    btnsex.setText(snapshot.child(uidck).child("gender").getValue(String.class));
+                    btnbirth.setText(snapshot.child(uidck).child("birth").getValue(String.class));
+                    btnheight.setText(String.format("%scm", snapshot.child(uidck).child("height").getValue(String.class)));
+                    btnweight.setText(String.format("%skg", snapshot.child(uidck).child("weight").getValue(String.class)));
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+
         editnick.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 dialogView = (View) View.inflate(ProfileActivity.this, R.layout.prof, null);
@@ -137,7 +160,7 @@ public class ProfileActivity extends AppCompatActivity {
                 dlg.show();
             }
         });
-        btnsex = (Button) findViewById(R.id.btnsex);
+
         btnsex.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 final String[] items = new String[]{"남자", "여자", "표기 안함"};
@@ -173,7 +196,7 @@ public class ProfileActivity extends AppCompatActivity {
                 }).create().show();
             }
         });
-        btnheight = (TextView) findViewById(R.id.btnheight);
+
         btnheight.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 dialogView = (View) View.inflate(ProfileActivity.this, R.layout.profile_height, null);
@@ -208,7 +231,7 @@ public class ProfileActivity extends AppCompatActivity {
                 dlg.show();
             }
         });
-        btnweight = (TextView) findViewById(R.id.btnweight);
+
         btnweight.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 dialogView = (View) View.inflate(ProfileActivity.this, R.layout.profile_weight, null);
