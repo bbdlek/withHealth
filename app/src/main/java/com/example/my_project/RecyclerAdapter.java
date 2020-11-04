@@ -36,7 +36,7 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ItemVi
         // Item을 하나, 하나 보여주는(bind 되는) 함수입니다.
 
         holder.onBind(listData.get(position));
-        holder.imageView.setOnClickListener(new View.OnClickListener(){
+        holder.itemView.setOnClickListener(new View.OnClickListener(){
 //        GridLayoutManager.LayoutParams layoutParams = (GridLayoutManager.LayoutParams)holder.imageView.getLayoutParams();
             @Override
             public void onClick(View v) {

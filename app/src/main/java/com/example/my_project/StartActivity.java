@@ -14,6 +14,9 @@ import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.TextView;
 
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+
 public class StartActivity extends AppCompatActivity {
 
     private Button mStartBtn, mStopBtn, mPauseBtn;
@@ -21,6 +24,9 @@ public class StartActivity extends AppCompatActivity {
     private ImageButton sound_on,sound_off;
     private Thread timeThread = null;
     private Boolean isRunning = true;
+
+    private FirebaseDatabase database = FirebaseDatabase.getInstance();
+    private DatabaseReference myRef = database.getReference("User");
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -104,6 +110,8 @@ public class StartActivity extends AppCompatActivity {
             @SuppressLint("DefaultLocale") String result = String.format("%02d:%02d:%02d:%02d", hour, min, sec, mSec);
 
             mTimeTextView.setText(result);
+            DatabaseReference grRef = myRef.child("User1");
+            grRef.child("laptime").setValue(mTimeTextView.getText().toString());
         }
     };
 
