@@ -33,20 +33,6 @@
 
         //home버튼
 
-        <Chronometer
-            android:id="@+id/chronometer1"
-            android:layout_width="match_parent"
-            android:layout_height="60dp"
-            android:layout_marginTop="124dp"
-            android:format="%s"
-            android:gravity="center"
-            android:textColor="@color/colorTest1"
-            android:textSize="30dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
         <Button
             android:id="@+id/buttonstart"
             android:layout_width="80dp"
@@ -63,11 +49,12 @@
             android:id="@+id/dateNow"
             android:layout_width="140dp"
             android:layout_height="35dp"
-            android:layout_marginTop="80dp"
+            android:layout_marginTop="128dp"
             android:textColor="@color/colorTest1"
             android:textSize="24dp"
+            android:text="00:00:00:00"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.42"
+            app:layout_constraintHorizontal_bias="0.498"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
