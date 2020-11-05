@@ -42,7 +42,6 @@
             android:name=".find_group_popup1"
             android:theme="@android:style/Theme.Dialog" />
         <activity android:name=".GroupActivity" />
-        <activity android:name=".GymActivity" />
         <activity android:name=".TipActivity" />
         <activity android:name=".StaticActivity" />
     </application>
