@@ -43,8 +43,12 @@ public class HomeActivity extends AppCompatActivity {
     String formatDate = "00:00:00:00";
     TextView dateNow;
     Calendar calendar = Calendar.getInstance();
-    ListView listView;
-    HealthAdapter adapter;
+    ListView listView1;
+    ListView listView2;
+    ListView listView3;
+    HealthAdapter adapter1;
+    HealthAdapter adapter2;
+    HealthAdapter adapter3;
     ImageButton good_routine;
 
 
@@ -109,9 +113,11 @@ public class HomeActivity extends AppCompatActivity {
         });
 
 
+
+
         btnStart = (Button) findViewById(R.id.buttonstart);
 
-//        Chorono = (Chronometer) findViewById(R.id.chronometer1);
+//      Chorono = (Chronometer) findViewById(R.id.chronometer1);
         btnStart.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -159,29 +165,57 @@ public class HomeActivity extends AppCompatActivity {
         tabHost1.addTab(ts3);
 
 
-        //리스트뷰
-        // Adapter 생성
-        adapter = new HealthAdapter() ;
-
-        // 리스트뷰 참조 및 Adapter달기
-        listView = (ListView) findViewById(R.id.listView);
-        listView.setAdapter(adapter);
-
         //추천 루틴 id연결
         good_routine = findViewById(R.id.good_routine);
+
+        //리스트뷰1
+        // Adapter 생성
+        adapter1 = new HealthAdapter() ;
+        // 리스트뷰 참조 및 Adapter달기
+        listView1 = (ListView) findViewById(R.id.listView1);
+        listView1.setAdapter(adapter1);
+
+
+        //리스트뷰2
+        // Adapter 생성
+        adapter2 = new HealthAdapter() ;
+        // 리스트뷰 참조 및 Adapter달기
+        listView2 = (ListView) findViewById(R.id.listView2);
+        listView2.setAdapter(adapter2);
+        adapter2.addItem("Squat", 3 + "set", "None");
+        adapter2.addItem("Lunge", 3 + "set", "None");
+        adapter2.addItem("Calf Raise", 3 + "set", "None");
+        adapter2.addItem("Leg Curl", 3 + "set", "None");
+        adapter2.addItem("Leg Press", 3 + "set", "None");
+        adapter2.addItem("Bridge", 3 + "set", "None");
+
+
+        //리스트뷰3
+        // Adapter 생성
+        adapter3 = new HealthAdapter() ;
+        // 리스트뷰 참조 및 Adapter달기
+        listView3 = (ListView) findViewById(R.id.listView3);
+        listView3.setAdapter(adapter3);
+        adapter3.addItem("Dumbbel Row", 5 + "set", 15 + "kg");
+        adapter3.addItem("Dumbbel Curl", 5 + "set", 10 + "kg");
+        adapter3.addItem("Bench Press", 5 + "set", 50 + "kg");
+        adapter3.addItem("Dead Lift", 5 + "set", 50 + "kg");
+        adapter3.addItem("Dumbbel Fly", 5 + "set", 10 + "kg");
+        adapter3.addItem("Shoulder Press", 5 + "set", 20 + "kg");
+
     }
     public void mOnClick(View v) {
         EditText ed = (EditText) findViewById(R.id.newitem);
         switch (v.getId()) {
             case R.id.good_routine:
                 // 추천 아이템 추가.
-                adapter.addItem("Pull-up", 5 + "set", "None");
-                adapter.addItem("Shoulder Press", 5 + "set", 10 + "kg");
-                adapter.addItem("Bench Press", 5 + "set", 50 + "kg");
-                adapter.addItem("Dumbbell row", 5 + "set", 20 + "kg");
-                adapter.addItem("lateral raise", 5 + "set", 10 + "kg");
-                adapter.addItem("Dips", 5 + "set", "None");
-                adapter.notifyDataSetChanged();           // 리스트 목록 갱신
+                adapter1.addItem("Pull-up", 5 + "set", "None");
+                adapter1.addItem("Shoulder Press", 5 + "set", 10 + "kg");
+                adapter1.addItem("Bench Press", 5 + "set", 50 + "kg");
+                adapter1.addItem("Dumbbell row", 5 + "set", 20 + "kg");
+                adapter1.addItem("Side Lateral raise", 5 + "set", 5 + "kg");
+                adapter1.addItem("Dips", 5 + "set", "None");
+                adapter1.notifyDataSetChanged();           // 리스트 목록 갱신
                 break;
             case R.id.btnAdd:                                 // ADD 버튼 클릭시
                 //firebase
@@ -194,14 +228,14 @@ public class HomeActivity extends AppCompatActivity {
                 int set = 5;
                 int weight = 20;
                 if (!text.isEmpty()) {                        // 입력된 text 문자열이 비어있지 않으면
-                    adapter.addItem(text, set + "set", weight + "kg");
+                    adapter1.addItem(text, set + "set", weight + "kg");
                     ed.setText("");                           // EditText 입력란 초기화
-                    adapter.notifyDataSetChanged();           // 리스트 목록 갱신
+                    adapter1.notifyDataSetChanged();           // 리스트 목록 갱신
                 }*/
                 break;
             case R.id.btnDelete:                             // DELETE 버튼 클릭시
-                adapter.delItem();
-                adapter.notifyDataSetChanged();
+                adapter1.delItem();
+                adapter1.notifyDataSetChanged();
                 break;
         }
     }

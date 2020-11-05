@@ -56,7 +56,6 @@ public class HomeSaveActivity extends AppCompatActivity {
                 result.put("set", getSet);
                 result.put("weight", getWeight);
 
-                final Date date = new Date(System.currentTimeMillis());
                 healthref.addListenerForSingleValueEvent(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot snapshot) {
@@ -70,7 +69,7 @@ public class HomeSaveActivity extends AppCompatActivity {
                             }
                         }
                         writeNewUser("save" + i, getTitle, getSet, getWeight);
-                        healthref.child("routine" + r_cnt).child("save" + i).child(getTitle).child("weight").child(getWeight).setValue(date.toString());
+                        healthref.child("routine" + r_cnt).child("save" + i).child(getTitle).child("weight").child(""+i).setValue(getWeight);
                     }
 
                     @Override

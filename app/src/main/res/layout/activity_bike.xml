@@ -48,7 +48,7 @@
         app:layout_constraintHorizontal_bias="0.051"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.695" />
+        app:layout_constraintVertical_bias="0.764" />
 
     <Button
         android:id="@+id/buttonroad"
@@ -58,10 +58,10 @@
         android:text="Road"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.051"
+        app:layout_constraintHorizontal_bias="0.048"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.479" />
+        app:layout_constraintVertical_bias="0.525" />
 
     <Button
         android:id="@+id/buttoncross"
@@ -71,10 +71,10 @@
         android:text="cross"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.051"
+        app:layout_constraintHorizontal_bias="0.055"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.239" />
+        app:layout_constraintVertical_bias="0.247" />
 
     <TextView
         android:id="@+id/textView16"
@@ -84,35 +84,35 @@
         android:textColor="#000000"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.394"
+        app:layout_constraintHorizontal_bias="0.421"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.344" />
+        app:layout_constraintVertical_bias="0.36" />
 
     <TextView
         android:id="@+id/textView17"
         android:layout_width="378dp"
         android:layout_height="82dp"
-        android:textColor="#000000"
         android:text="얇은 타이어와 밑쪽으로 구부러진 핸들이 특징인 로드 바이크. 스포츠 바이크 중에서도 특히 고속 주행 성능을 추구하여 설계. 자전거 레이스는 물론 출퇴근에 사용하는 분들도 많다. 바람과 일체가 되서 주행하는 질주감은 로드 바이크 최대의 매력이고 특징이다"
+        android:textColor="#000000"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.484"
+        app:layout_constraintHorizontal_bias="0.515"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.585" />
+        app:layout_constraintVertical_bias="0.644" />
 
     <TextView
         android:id="@+id/textView18"
         android:layout_width="372dp"
         android:layout_height="84dp"
-        android:textColor="#000000"
         android:text="그 이름과 같이 산악 지대 등 노면 상태가 나쁜 길에서 탈 수 있도록 설계된 자전거이며, 압도적인 주파성을 발휘한다. 타이어가 굵어서 노면 저항이 크고, 포장 도로에서는 속도가 그다지 나지 않지만, 턱 등을 신경 쓰지 않고 탈 수 있어서, 도시 길거리에서도 믿음직한 자전거다."
+        android:textColor="#000000"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.41"
+        app:layout_constraintHorizontal_bias="0.23"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.826" />
+        app:layout_constraintVertical_bias="0.908" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

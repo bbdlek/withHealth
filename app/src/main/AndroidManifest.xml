@@ -20,11 +20,7 @@
         <activity android:name=".SignupActivity" />
         <activity android:name=".Login" />
         <activity android:name=".Loading_Login">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
         <activity android:name=".MakeGroupActivity" />
         <activity android:name=".ChestActivity" />
@@ -35,7 +31,13 @@
         <activity android:name=".ProfileActivity" />
         <activity
             android:name=".HomeActivity"
-            android:windowSoftInputMode="adjustNothing" />
+            android:windowSoftInputMode="adjustNothing">
+        <intent-filter>
+            <action android:name="android.intent.action.MAIN" />
+
+            <category android:name="android.intent.category.LAUNCHER" />
+        </intent-filter>
+        </activity>
         <activity android:name=".group_info" />
         <activity
             android:name=".group_find_popup2"
