@@ -49,6 +49,7 @@ public class StaticActivity extends AppCompatActivity {
                 //TipActivity로 전환
                 Intent i = new Intent( StaticActivity.this, TipActivity.class);
                 startActivity(i);//지정해 놓은 페이지로 화면 전환
+//                finish();
             }
         });
 
@@ -59,6 +60,7 @@ public class StaticActivity extends AppCompatActivity {
                 //HomeActivity로 전환
                 Intent i = new Intent( StaticActivity.this, HomeActivity.class);
                 startActivity(i);//지정해 놓은 페이지로 화면 전환
+//                finish();
             }
         });
 
@@ -69,6 +71,7 @@ public class StaticActivity extends AppCompatActivity {
                 //groupActivity로 전환
                 Intent i = new Intent( StaticActivity.this, GroupActivity.class);
                 startActivity(i);//지정해 놓은 페이지로 화면 전환
+//                finish();
             }
         });
 
@@ -79,6 +82,7 @@ public class StaticActivity extends AppCompatActivity {
                 //profileActivity로 전환
                 Intent i = new Intent( StaticActivity.this, ProfileActivity.class);
                 startActivity(i);//지정해 놓은 페이지로 화면 전환
+//                finish();
             }
         });
 
