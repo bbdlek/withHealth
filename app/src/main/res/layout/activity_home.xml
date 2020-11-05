@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
+<RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -8,30 +8,24 @@
     android:layout_height="match_parent"
     android:background="@color/colorTest2"
     android:baselineAligned="false"
-    android:orientation="vertical" >
+    android:orientation="vertical"
+    tools:context=".HomeActivity">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="parent">
 
-        //추천루틴 미구현
-
-
-        //타이머인데 기준이형이랑 상호작용 해야함.
-
-
-        //타이머 시작 버튼
-
-        //타이머 종료 버튼
-
-        //오늘 날짜 출력
-
-        //표 부분 수정할부분임.
-
-        //home버튼
+        <ImageButton
+            android:id="@+id/good_routine"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
+            android:background="@color/colorClear"
+            android:onClick="mOnClick"
+            app:srcCompat="@android:drawable/btn_star" />
 
         <Button
             android:id="@+id/buttonstart"
@@ -40,6 +34,7 @@
             android:layout_marginTop="200dp"
             android:background="@drawable/buttonshape_sec"
             android:text="START"
+            android:layout_centerHorizontal="true"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.498"
             app:layout_constraintStart_toStartOf="parent"
@@ -53,80 +48,8 @@
             android:textColor="@color/colorTest1"
             android:textSize="24dp"
             android:text="00:00:00:00"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.498"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            android:layout_centerHorizontal="true" />
 
-        <ImageButton
-            android:id="@+id/staticButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="12dp"
-            android:background="#00ff0000"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@+id/homeButton"
-            app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toEndOf="@+id/tipButton"
-            app:layout_constraintTop_toBottomOf="@+id/recyclerView"
-            app:layout_constraintVertical_bias="0.285"
-            app:srcCompat="@drawable/statistics_icon" />
-
-        <ImageButton
-            android:id="@+id/homeButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="12dp"
-            android:background="#00ff0000"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@+id/groupButton"
-            app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toEndOf="@+id/staticButton"
-            app:layout_constraintTop_toBottomOf="@+id/recyclerView"
-            app:layout_constraintVertical_bias="0.285"
-            app:srcCompat="@drawable/home_icon" />
-
-        <ImageButton
-            android:id="@+id/groupButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="12dp"
-            android:background="#00ff0000"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@+id/profileButton"
-            app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toEndOf="@+id/homeButton"
-            app:layout_constraintTop_toBottomOf="@+id/recyclerView"
-            app:layout_constraintVertical_bias="0.285"
-            app:srcCompat="@drawable/group_icon" />
-
-        <ImageButton
-            android:id="@+id/profileButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="12dp"
-            android:background="#00ff0000"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toEndOf="@+id/groupButton"
-            app:layout_constraintTop_toBottomOf="@+id/recyclerView"
-            app:layout_constraintVertical_bias="0.285"
-            app:srcCompat="@drawable/profile_icon" />
-
-        <ImageButton
-            android:id="@+id/tipButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="12dp"
-            android:background="#00ff0000"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@+id/staticButton"
-            app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/recyclerView"
-            app:layout_constraintVertical_bias="0.271"
-            app:srcCompat="@drawable/tip_icon" />
 
         <EditText
             android:id="@+id/newitem"
@@ -144,52 +67,145 @@
             android:layout_width="87dp"
             android:layout_height="44dp"
             android:layout_marginTop="264dp"
+            android:layout_toRightOf="@+id/newitem"
+            android:layout_marginLeft="5dp"
             android:background="@drawable/buttonshape_sec"
             android:onClick="mOnClick"
             android:text="add"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.663"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            />
 
         <Button
             android:id="@+id/btnDelete"
             android:layout_width="87dp"
             android:layout_height="44dp"
             android:layout_marginTop="264dp"
+            android:layout_toRightOf="@+id/btnAdd"
+            android:layout_marginLeft="5dp"
             android:background="@drawable/buttonshape_sec"
             android:onClick="mOnClick"
             android:text="delete"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.944"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            />
 
-        <ListView
-            android:id="@+id/listView"
-            android:layout_width="382dp"
-            android:layout_height="272dp"
-            android:layout_marginTop="332dp"
-            android:layout_weight="1"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.379"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
-
-        </ListView>
-
-        <ImageButton
-            android:id="@+id/imageButton5"
-            android:layout_width="wrap_content"
+        <RelativeLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="48dp"
-            android:background="@color/colorClear"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.852"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@android:drawable/btn_star" />
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:layout_marginTop="310dp"
+            android:background="@drawable/back_round">
+            //Tab
+            <TabHost
+                android:id="@+id/tabHost1"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="85dp">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+                    <!-- TabWidget의 id값이 반드시 "tabs"로 지정되어야 함. -->
+                    <TabWidget
+                        android:id="@android:id/tabs"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"/>
+                    <!-- FrameLayout의 id값이 반드시 "tabcontent"로 지정되어야 함. -->
+                    <FrameLayout
+                        android:id="@android:id/tabcontent"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/colorTest1">
+                        <!-- 첫 번째 페이지. content1 -->
+                        <RelativeLayout
+                            android:id="@+id/content1"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+
+                            //루틴내용
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content">
+                                <ListView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+
+                                    android:id="@+id/listView"
+                                    android:background="#fff"/>
+                            </LinearLayout>
+                        </RelativeLayout>
+                        <!-- 두 번째 페이지. content2 -->
+                        <RelativeLayout
+                            android:id="@+id/content2"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+
+                        </RelativeLayout>
+                        <!-- 세 번째 페이지. content3 -->
+                        <RelativeLayout
+                            android:id="@+id/content3"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+
+                        </RelativeLayout>
+                    </FrameLayout>
+                </LinearLayout>
+            </TabHost>
+        </RelativeLayout>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="85dp"
+            android:background="@color/colorTest2"
+            android:layout_alignParentBottom="true">
+            <ImageButton
+                android:id="@+id/tipButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_toLeftOf="@+id/homeButton"
+                android:layout_marginRight ="90dp"
+                android:background="@color/colorClear"
+                app:srcCompat="@drawable/tip_icon"/>
+            <ImageButton
+                android:id="@+id/staticButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_toLeftOf="@+id/homeButton"
+                android:layout_marginRight ="15dp"
+                android:background="@color/colorClear"
+                app:srcCompat="@drawable/statistics_icon"/>
+            <ImageButton
+                android:id="@+id/homeButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_alignParentBottom="true"
+                android:background="@color/colorClear"
+                app:srcCompat="@drawable/home_icon"/>
+            <ImageButton
+                android:id="@+id/groupButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_toRightOf="@+id/homeButton"
+                android:layout_marginLeft ="15dp"
+                android:background="@color/colorClear"
+                app:srcCompat="@drawable/group_icon"/>
+            <ImageButton
+                android:id="@+id/profileButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_toRightOf="@+id/homeButton"
+                android:layout_marginLeft ="90dp"
+                android:background="@color/colorClear"
+                app:srcCompat="@drawable/profile_icon"/>
+        </RelativeLayout>
 
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
-</androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    </RelativeLayout>
+</RelativeLayout>

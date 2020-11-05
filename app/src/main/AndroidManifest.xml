@@ -14,6 +14,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme.NoActionBar">
+        <activity android:name=".StaticSaveActivity" />
+        <activity android:name=".HomeSaveActivity" />
         <activity android:name=".GoogleLogin" />
         <activity android:name=".SignupActivity" />
         <activity android:name=".Login" />
@@ -37,7 +39,7 @@
         <activity android:name=".group_info" />
         <activity
             android:name=".group_find_popup2"
-            android:theme="@android:style/Theme.Dialog"/>
+            android:theme="@android:style/Theme.Dialog" />
         <activity
             android:name=".find_group_popup1"
             android:theme="@android:style/Theme.Dialog" />

@@ -47,7 +47,7 @@
                     android:layout_marginTop="20dp"
                     android:background="@drawable/map_gym"/>
                 <TextView
-                    android:id="@+id/time-title1"
+                    android:id="@+id/todayTime"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="45dp"
@@ -68,7 +68,7 @@
                     android:layout_marginTop="20dp"
                     android:background="@drawable/map_gym"/>
                 <TextView
-                    android:id="@+id/time-title2"
+                    android:id="@+id/totalTime"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="265dp"
@@ -96,11 +96,11 @@
                     android:layout_centerHorizontal="true"
                     android:text="Health Time" />
 
-                <com.github.mikephil.charting.charts.BarChart
-                    android:id="@+id/barchart"
+                <com.github.mikephil.charting.charts.LineChart
+                    android:id="@+id/chart"
                     android:layout_width="match_parent"
                     android:layout_height="200dp"
-                    android:layout_marginTop="100dp"/>
+                    android:layout_marginTop="50dp"/>
             </RelativeLayout>
             //중량 그래프
             <RelativeLayout
@@ -145,7 +145,7 @@
                                     android:layout_width="120dp"
                                     android:layout_height="30dp"
                                     android:layout_marginLeft="280dp"
-                                    android:text="graph"
+                                    android:text="check"
                                     android:gravity="center"/>
                                 <TextView
                                     android:layout_width="match_parent"
@@ -165,8 +165,8 @@
                                     android:background="#000"/>
                                 //루틴내용
                                 <LinearLayout
-                                    android:layout_width="280dp"
-                                    android:layout_height="wrap_content">
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="250dp">
                                     <ListView
                                         android:layout_width="match_parent"
                                         android:layout_height="match_parent"
@@ -248,14 +248,25 @@
                 </TabHost>
                 //중량 저장
                 <Button
+                    android:id="@+id/save"
                     android:layout_width="50dp"
                     android:layout_height="30dp"
                     android:layout_centerHorizontal="true"
                     android:layout_marginTop="250dp"
                     android:text="save"
                     android:textSize="10dp"
-                    android:background="@drawable/button_round"
-                    android:id="@+id/save"/>
+                    android:onClick="mOnClick"
+                    android:background="@drawable/button_round" />
+                <Button
+                    android:id="@+id/show"
+                    android:layout_width="50dp"
+                    android:layout_height="30dp"
+                    android:layout_marginTop="250dp"
+                    android:layout_toRightOf="@+id/save"
+                    android:text="Graph"
+                    android:textSize="10dp"
+                    android:onClick="mOnClick"
+                    android:background="@drawable/button_round"/>
             </RelativeLayout>
             //띵언
             <TextView

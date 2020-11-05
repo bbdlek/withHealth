@@ -2,6 +2,8 @@ package com.example.my_project;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.ContextCompat;
+
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
@@ -13,6 +15,7 @@ import android.widget.Chronometer;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ListView;
+import android.widget.TabHost;
 import android.widget.Toast;
 import android.widget.TextView;
 
@@ -40,9 +43,10 @@ public class HomeActivity extends AppCompatActivity {
     String formatDate = "00:00:00:00";
     TextView dateNow;
     Calendar calendar = Calendar.getInstance();
-    ArrayList<String> items;
-    ArrayAdapter<String> adapter;
     ListView listView;
+    HealthAdapter adapter;
+    ImageButton good_routine;
+
 
 
     //homebutton
@@ -132,37 +136,72 @@ public class HomeActivity extends AppCompatActivity {
             }
         });
 
+        //탭
+        TabHost tabHost1 = (TabHost) findViewById(R.id.tabHost1) ;
+        tabHost1.setup() ;
+
+        // 첫 번째 Tab. (탭 표시 텍스트:"TAB 1"), (페이지 뷰:"content1")
+        TabHost.TabSpec ts1 = tabHost1.newTabSpec("Tab Spec 1") ;
+        ts1.setContent(R.id.content1) ;
+        ts1.setIndicator("Routine 1") ;
+        tabHost1.addTab(ts1)  ;
+
+        // 두 번째 Tab. (탭 표시 텍스트:"TAB 2"), (페이지 뷰:"content2")
+        TabHost.TabSpec ts2 = tabHost1.newTabSpec("Tab Spec 2") ;
+        ts2.setContent(R.id.content2) ;
+        ts2.setIndicator("Routine 2") ;
+        tabHost1.addTab(ts2) ;
+
+        // 세 번째 Tab. (탭 표시 텍스트:"TAB 3"), (페이지 뷰:"content3")
+        TabHost.TabSpec ts3 = tabHost1.newTabSpec("Tab Spec 3") ;
+        ts3.setContent(R.id.content3) ;
+        ts3.setIndicator("Routine 3") ;
+        tabHost1.addTab(ts3);
+
 
         //리스트뷰
-        items=new ArrayList<String>();
-        items.add("바벨로우");
-        items.add("벤치 프레스");
-        items.add("숄더 프레스");
-        items.add("스쿼트");
-        adapter=new ArrayAdapter<String>(HomeActivity.this, android.R.layout.simple_list_item_single_choice, items);
-        listView=(ListView)findViewById(R.id.listView);
+        // Adapter 생성
+        adapter = new HealthAdapter() ;
+
+        // 리스트뷰 참조 및 Adapter달기
+        listView = (ListView) findViewById(R.id.listView);
         listView.setAdapter(adapter);
-        listView.setChoiceMode(ListView.CHOICE_MODE_SINGLE);
+
+        //추천 루틴 id연결
+        good_routine = findViewById(R.id.good_routine);
     }
     public void mOnClick(View v) {
         EditText ed = (EditText) findViewById(R.id.newitem);
         switch (v.getId()) {
+            case R.id.good_routine:
+                // 추천 아이템 추가.
+                adapter.addItem("Pull-up", 5 + "set", "None");
+                adapter.addItem("Shoulder Press", 5 + "set", 10 + "kg");
+                adapter.addItem("Bench Press", 5 + "set", 50 + "kg");
+                adapter.addItem("Dumbbell row", 5 + "set", 20 + "kg");
+                adapter.addItem("lateral raise", 5 + "set", 10 + "kg");
+                adapter.addItem("Dips", 5 + "set", "None");
+                adapter.notifyDataSetChanged();           // 리스트 목록 갱신
+                break;
             case R.id.btnAdd:                                 // ADD 버튼 클릭시
-                String text = ed.getText().toString();        // EditText에 입력된 문자열값을 얻기
+                //firebase
+                Intent select = new Intent( HomeActivity.this, HomeSaveActivity.class);
+                startActivity(select);//지정해 놓은 페이지로 화면 전환
+
+
+                //야매 집어넣기
+                /*String text = ed.getText().toString();        // EditText에 입력된 문자열값을 얻기
+                int set = 5;
+                int weight = 20;
                 if (!text.isEmpty()) {                        // 입력된 text 문자열이 비어있지 않으면
-                    items.add(text);                          // items 리스트에 입력된 문자열 추가
+                    adapter.addItem(text, set + "set", weight + "kg");
                     ed.setText("");                           // EditText 입력란 초기화
                     adapter.notifyDataSetChanged();           // 리스트 목록 갱신
-                }
+                }*/
                 break;
             case R.id.btnDelete:                             // DELETE 버튼 클릭시
-                int pos = listView.getCheckedItemPosition(); // 현재 선택된 항목의 첨자(위치값) 얻기
-                if (pos != ListView.INVALID_POSITION) {      // 선택된 항목이 있으면
-                    items.remove(pos);                       // items 리스트에서 해당 위치의 요소 제거
-                    listView.clearChoices();                 // 선택 해제
-                    adapter.notifyDataSetChanged();
-                    // 어답터와 연결된 원본데이터의 값이 변경된을 알려 리스트뷰 목록 갱신
-                }
+                adapter.delItem();
+                adapter.notifyDataSetChanged();
                 break;
         }
     }
